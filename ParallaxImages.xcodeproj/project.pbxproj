@@ -16,7 +16,6 @@
 		4DF3F3E118EAABA7003094A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF3F3DF18EAABA7003094A8 /* Main.storyboard */; };
 		4DF3F3E418EAABA7003094A8 /* MJRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3F3E318EAABA7003094A8 /* MJRootViewController.m */; };
 		4DF3F3E618EAABA7003094A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF3F3E518EAABA7003094A8 /* Images.xcassets */; };
-		4DF3F3ED18EAABA7003094A8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF3F3EC18EAABA7003094A8 /* XCTest.framework */; };
 		4DF3F3EE18EAABA7003094A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF3F3CD18EAABA7003094A8 /* Foundation.framework */; };
 		4DF3F3EF18EAABA7003094A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF3F3D118EAABA7003094A8 /* UIKit.framework */; };
 		4DF3F3F718EAABA7003094A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DF3F3F518EAABA7003094A8 /* InfoPlist.strings */; };
@@ -55,7 +54,6 @@
 		BA1AE83819F13E88000040B3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1AE83719F13E88000040B3 /* libz.dylib */; };
 		BA9EC15319650D0900D23BFE /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9EC15219650D0900D23BFE /* UIImage+ImageEffects.m */; };
 		BA9EC15519657B8F00D23BFE /* panoramic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA9EC15419657B8F00D23BFE /* panoramic.jpg */; };
-		BAD53DD019F63554001BB41A /* libCloudinary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD53DCF19F63554001BB41A /* libCloudinary.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +82,6 @@
 		4DF3F3E318EAABA7003094A8 /* MJRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRootViewController.m; sourceTree = "<group>"; };
 		4DF3F3E518EAABA7003094A8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4DF3F3EB18EAABA7003094A8 /* ParallaxImagesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParallaxImagesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DF3F3EC18EAABA7003094A8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4DF3F3F418EAABA7003094A8 /* ParallaxImagesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParallaxImagesTests-Info.plist"; sourceTree = "<group>"; };
 		4DF3F3F618EAABA7003094A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4DF3F3F818EAABA7003094A8 /* ParallaxImagesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParallaxImagesTests.m; sourceTree = "<group>"; };
@@ -110,7 +107,6 @@
 		BA9EC15119650D0900D23BFE /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		BA9EC15219650D0900D23BFE /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		BA9EC15419657B8F00D23BFE /* panoramic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = panoramic.jpg; sourceTree = "<group>"; };
-		BAD53DCF19F63554001BB41A /* libCloudinary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCloudinary.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +116,6 @@
 			files = (
 				BA1AE83819F13E88000040B3 /* libz.dylib in Frameworks */,
 				4DF3F3D018EAABA7003094A8 /* CoreGraphics.framework in Frameworks */,
-				BAD53DD019F63554001BB41A /* libCloudinary.a in Frameworks */,
 				4DF3F3D218EAABA7003094A8 /* UIKit.framework in Frameworks */,
 				4DF3F3CE18EAABA7003094A8 /* Foundation.framework in Frameworks */,
 			);
@@ -130,7 +125,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DF3F3ED18EAABA7003094A8 /* XCTest.framework in Frameworks */,
 				4DF3F3EF18EAABA7003094A8 /* UIKit.framework in Frameworks */,
 				4DF3F3EE18EAABA7003094A8 /* Foundation.framework in Frameworks */,
 			);
@@ -161,12 +155,10 @@
 		4DF3F3CC18EAABA7003094A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BAD53DCF19F63554001BB41A /* libCloudinary.a */,
 				BA1AE83719F13E88000040B3 /* libz.dylib */,
 				4DF3F3CD18EAABA7003094A8 /* Foundation.framework */,
 				4DF3F3CF18EAABA7003094A8 /* CoreGraphics.framework */,
 				4DF3F3D118EAABA7003094A8 /* UIKit.framework */,
-				4DF3F3EC18EAABA7003094A8 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

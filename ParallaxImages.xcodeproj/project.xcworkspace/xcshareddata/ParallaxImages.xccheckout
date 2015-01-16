@@ -10,6 +10,8 @@
 	<string>ParallaxImages</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>1844F33045A96960450D76870DF1DF7D8F9541F9</key>
+		<string>https://github.com/g1ahsia/DTS-617469429.git</string>
 		<key>EBDA7E5E8A20B3E065A1CD78E3AE49D8DEF9B487</key>
 		<string>https://github.com/g1ahsia/MyParallaxCollectionView.git</string>
 	</dict>
@@ -17,17 +19,27 @@
 	<string>ParallaxImages.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>EBDA7E5E8A20B3E065A1CD78E3AE49D8DEF9B487</key>
+		<key>1844F33045A96960450D76870DF1DF7D8F9541F9</key>
 		<string>../..</string>
+		<key>EBDA7E5E8A20B3E065A1CD78E3AE49D8DEF9B487</key>
+		<string>../../../MyParallaxCollectionView</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/g1ahsia/MyParallaxCollectionView.git</string>
+	<string>https://github.com/g1ahsia/DTS-617469429.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>EBDA7E5E8A20B3E065A1CD78E3AE49D8DEF9B487</string>
+	<string>1844F33045A96960450D76870DF1DF7D8F9541F9</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1844F33045A96960450D76870DF1DF7D8F9541F9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DTS-617469429</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
