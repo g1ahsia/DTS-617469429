@@ -90,30 +90,12 @@ NSInteger BOUNDS_HEIGHT;
     NSString* imageName = [self.images objectAtIndex:indexPath.row - 1];
     
         cell.image = [UIImage imageNamed:imageName];
-    
-    //set offset accordingly
-    CGFloat yOffset = ((self.parallaxCollectionView.contentOffset.y - cell.frame.origin.y + (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2) / IMAGE_HEIGHT) * IMAGE_OFFSET_SPEED;
-//    cell.imageOffset = CGPointMake(0.0f, yOffset);
-    cell.transparency = fabsf(self.parallaxCollectionView.contentOffset.y - cell.frame.origin.y + (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2)*0.0031;
-    // Only display the quote of the center cell
-    if (self.parallaxCollectionView.contentOffset.y -  cell.frame.origin.y + (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2 == 0.0) {
-        [UIView animateWithDuration:0.8f animations:^{ cell.textTransparency = 1; } completion:nil];
-    }
 
     return cell;
 }
 
 #pragma mark - UIScrollViewdelegate methods
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"did scroll");
-    for(MJCollectionViewCell *view in self.parallaxCollectionView.visibleCells) {
-        CGFloat yOffset = ((self.parallaxCollectionView.contentOffset.y - view.frame.origin.y + (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2) / IMAGE_HEIGHT) * IMAGE_OFFSET_SPEED;
-        CGFloat transparency = fabsf(self.parallaxCollectionView.contentOffset.y - view.frame.origin.y + (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2)*0.0031;
-
-        view.transparency = transparency;
-//        view.imageOffset = CGPointMake(0.0f, yOffset);
-        NSLog(@"transparency %f", view.transparency);
-    }
 }
 
 //- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {

@@ -19,8 +19,6 @@ extern NSInteger IMAGE_HEIGHT;
  */
 @property (nonatomic, strong, readwrite) UIImage *image;
 @property (nonatomic, assign, readwrite) CGPoint imageOffset;
-@property (nonatomic, assign, readwrite) CGFloat transparency;
-@property (nonatomic, assign, readwrite) CGFloat textTransparency;
 
 
 @end

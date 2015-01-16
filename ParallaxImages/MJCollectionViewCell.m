@@ -79,13 +79,5 @@ NSInteger IMAGE_HEIGHT = 260;
     self.MJImageView.frame = offsetFrame;
 }
 
-- (void)setTransparency:(CGFloat)transparency
-{
-    _transparency = transparency;
-}
-
-- (void)setTextTransparency:(CGFloat)textTransparency
-{
-}
 
 @end
