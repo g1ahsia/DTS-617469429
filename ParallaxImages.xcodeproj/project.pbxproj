@@ -48,8 +48,12 @@
 		4DF3F42A18EABE52003094A8 /* image012.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DF3F40F18EABE52003094A8 /* image012.jpg */; };
 		4DF3F42B18EABE52003094A8 /* image013.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DF3F41018EABE52003094A8 /* image013.jpg */; };
 		4DF3F42C18EABE52003094A8 /* image013.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DF3F41018EABE52003094A8 /* image013.jpg */; };
-		4DF3F42F18EAC393003094A8 /* MJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3F42E18EAC393003094A8 /* MJCollectionViewCell.m */; };
-		4DF3F43018EAC393003094A8 /* MJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3F42E18EAC393003094A8 /* MJCollectionViewCell.m */; };
+		94CF2D2B1B7B82CD000387C1 /* PageViewPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CF2D281B7B82CD000387C1 /* PageViewPresentationController.m */; };
+		94CF2D2C1B7B82CD000387C1 /* ZoomInOutTransitioner.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CF2D2A1B7B82CD000387C1 /* ZoomInOutTransitioner.m */; };
+		94CF2D2F1B7B830A000387C1 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CF2D2E1B7B830A000387C1 /* PageViewController.m */; };
+		94CF2D321B7B8398000387C1 /* MJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CF2D311B7B8398000387C1 /* MJCollectionViewCell.m */; };
+		94CF2D351B7B83ED000387C1 /* main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CF2D331B7B83ED000387C1 /* main@2x.png */; };
+		94CF2D361B7B83ED000387C1 /* cancel_w.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CF2D341B7B83ED000387C1 /* cancel_w.png */; };
 		9FC1E0ED196BD540008AFEB5 /* MJCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1E0EC196BD540008AFEB5 /* MJCollectionViewFlowLayout.m */; };
 		BA1AE83819F13E88000040B3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1AE83719F13E88000040B3 /* libz.dylib */; };
 		BA9EC15319650D0900D23BFE /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9EC15219650D0900D23BFE /* UIImage+ImageEffects.m */; };
@@ -99,8 +103,16 @@
 		4DF3F40E18EABE52003094A8 /* image011.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image011.jpg; sourceTree = "<group>"; };
 		4DF3F40F18EABE52003094A8 /* image012.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image012.jpg; sourceTree = "<group>"; };
 		4DF3F41018EABE52003094A8 /* image013.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image013.jpg; sourceTree = "<group>"; };
-		4DF3F42D18EAC393003094A8 /* MJCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCollectionViewCell.h; sourceTree = "<group>"; };
-		4DF3F42E18EAC393003094A8 /* MJCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCollectionViewCell.m; sourceTree = "<group>"; };
+		94CF2D271B7B82CD000387C1 /* PageViewPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewPresentationController.h; sourceTree = "<group>"; };
+		94CF2D281B7B82CD000387C1 /* PageViewPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewPresentationController.m; sourceTree = "<group>"; };
+		94CF2D291B7B82CD000387C1 /* ZoomInOutTransitioner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomInOutTransitioner.h; sourceTree = "<group>"; };
+		94CF2D2A1B7B82CD000387C1 /* ZoomInOutTransitioner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomInOutTransitioner.m; sourceTree = "<group>"; };
+		94CF2D2D1B7B830A000387C1 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		94CF2D2E1B7B830A000387C1 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		94CF2D301B7B8398000387C1 /* MJCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCollectionViewCell.h; sourceTree = "<group>"; };
+		94CF2D311B7B8398000387C1 /* MJCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCollectionViewCell.m; sourceTree = "<group>"; };
+		94CF2D331B7B83ED000387C1 /* main@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main@2x.png"; sourceTree = "<group>"; };
+		94CF2D341B7B83ED000387C1 /* cancel_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_w.png; sourceTree = "<group>"; };
 		9FC1E0EB196BD540008AFEB5 /* MJCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		9FC1E0EC196BD540008AFEB5 /* MJCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		BA1AE83719F13E88000040B3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -173,8 +185,14 @@
 				4DF3F3E318EAABA7003094A8 /* MJRootViewController.m */,
 				9FC1E0EB196BD540008AFEB5 /* MJCollectionViewFlowLayout.h */,
 				9FC1E0EC196BD540008AFEB5 /* MJCollectionViewFlowLayout.m */,
-				4DF3F42D18EAC393003094A8 /* MJCollectionViewCell.h */,
-				4DF3F42E18EAC393003094A8 /* MJCollectionViewCell.m */,
+				94CF2D301B7B8398000387C1 /* MJCollectionViewCell.h */,
+				94CF2D311B7B8398000387C1 /* MJCollectionViewCell.m */,
+				94CF2D2D1B7B830A000387C1 /* PageViewController.h */,
+				94CF2D2E1B7B830A000387C1 /* PageViewController.m */,
+				94CF2D271B7B82CD000387C1 /* PageViewPresentationController.h */,
+				94CF2D281B7B82CD000387C1 /* PageViewPresentationController.m */,
+				94CF2D291B7B82CD000387C1 /* ZoomInOutTransitioner.h */,
+				94CF2D2A1B7B82CD000387C1 /* ZoomInOutTransitioner.m */,
 				BA9EC15119650D0900D23BFE /* UIImage+ImageEffects.h */,
 				BA9EC15219650D0900D23BFE /* UIImage+ImageEffects.m */,
 				4DF3F3E518EAABA7003094A8 /* Images.xcassets */,
@@ -186,6 +204,8 @@
 		4DF3F3D418EAABA7003094A8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				94CF2D331B7B83ED000387C1 /* main@2x.png */,
+				94CF2D341B7B83ED000387C1 /* cancel_w.png */,
 				4DF3F40218EABE52003094A8 /* Sample Images */,
 				4DF3F3D518EAABA7003094A8 /* ParallaxImages-Info.plist */,
 				4DF3F3D618EAABA7003094A8 /* InfoPlist.strings */,
@@ -320,11 +340,13 @@
 				4DF3F42B18EABE52003094A8 /* image013.jpg in Resources */,
 				4DF3F42918EABE52003094A8 /* image012.jpg in Resources */,
 				4DF3F41F18EABE52003094A8 /* image007.jpg in Resources */,
+				94CF2D351B7B83ED000387C1 /* main@2x.png in Resources */,
 				4DF3F42718EABE52003094A8 /* image011.jpg in Resources */,
 				4DF3F3E618EAABA7003094A8 /* Images.xcassets in Resources */,
 				4DF3F42118EABE52003094A8 /* image008.jpg in Resources */,
 				4DF3F3D818EAABA7003094A8 /* InfoPlist.strings in Resources */,
 				4DF3F41D18EABE52003094A8 /* image006.jpg in Resources */,
+				94CF2D361B7B83ED000387C1 /* cancel_w.png in Resources */,
 				4DF3F41918EABE52003094A8 /* image004.jpg in Resources */,
 				4DF3F41518EABE52003094A8 /* image002.jpg in Resources */,
 				4DF3F41B18EABE52003094A8 /* image005.JPG in Resources */,
@@ -365,12 +387,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CF2D2C1B7B82CD000387C1 /* ZoomInOutTransitioner.m in Sources */,
+				94CF2D2B1B7B82CD000387C1 /* PageViewPresentationController.m in Sources */,
+				94CF2D2F1B7B830A000387C1 /* PageViewController.m in Sources */,
 				4DF3F3DA18EAABA7003094A8 /* main.m in Sources */,
 				BA9EC15319650D0900D23BFE /* UIImage+ImageEffects.m in Sources */,
 				4DF3F3E418EAABA7003094A8 /* MJRootViewController.m in Sources */,
+				94CF2D321B7B8398000387C1 /* MJCollectionViewCell.m in Sources */,
 				9FC1E0ED196BD540008AFEB5 /* MJCollectionViewFlowLayout.m in Sources */,
 				4DF3F3DE18EAABA7003094A8 /* MJAppDelegate.m in Sources */,
-				4DF3F42F18EAC393003094A8 /* MJCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +404,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF3F3F918EAABA7003094A8 /* ParallaxImagesTests.m in Sources */,
-				4DF3F43018EAC393003094A8 /* MJCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +531,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ParallaxImages/ParallaxImages-Prefix.pch";
 				INFOPLIST_FILE = "ParallaxImages/ParallaxImages-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -532,6 +557,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ParallaxImages/ParallaxImages-Prefix.pch";
 				INFOPLIST_FILE = "ParallaxImages/ParallaxImages-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

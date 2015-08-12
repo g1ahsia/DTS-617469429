@@ -7,15 +7,40 @@
 //
 
 #import "MJAppDelegate.h"
+#import "MJRootViewController.h"
 
 @implementation MJAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    MJRootViewController *rootVC = [[MJRootViewController alloc] init];
+    
+    UITabBarItem *root = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"main@2x.png"] selectedImage:[UIImage imageNamed:@"main@2x.png"]];
+    root.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+    rootVC.tabBarItem = root;
+    
+    UINavigationController *rootNav = [[UINavigationController alloc] init];
+    [rootNav pushViewController:rootVC animated:YES];
+    rootNav.navigationBarHidden = YES;
+    
+    UITabBarController *myTabBarController = [[UITabBarController alloc] init];
+    myTabBarController.viewControllers = [NSArray arrayWithObjects:rootNav, nil];
+    
+    [myTabBarController.tabBar setTintColor:[UIColor whiteColor]];
+    [myTabBarController.tabBar setBarTintColor:[UIColor clearColor]];
+    myTabBarController.delegate = self;
+    [[UITabBar appearance] setShadowImage:[UIImage new]];
+    
+    
+    [self.window makeKeyAndVisible];
+    [self.window setRootViewController:myTabBarController];
+    
+    
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -24,7 +49,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 

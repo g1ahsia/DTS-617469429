@@ -9,8 +9,10 @@
 #import "MJRootViewController.h"
 #import "MJCollectionViewCell.h"
 #import "MJCollectionViewFlowLayout.h"
+#import "PageViewController.h"
+#import "ZoomInOutTransitioner.h"
 
-@interface MJRootViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate>
+@interface MJRootViewController ()
 
 @property (nonatomic, strong) UICollectionView *parallaxCollectionView;
 @property (nonatomic, strong) NSMutableArray* images;
@@ -18,7 +20,8 @@
 @end
 
 @implementation MJRootViewController {
-    
+    id<UIViewControllerTransitioningDelegate> transitioningDelegate;
+
 }
 NSInteger BOUNDS_WIDTH;
 NSInteger BOUNDS_HEIGHT;
@@ -32,7 +35,7 @@ NSInteger BOUNDS_HEIGHT;
         _parallaxCollectionView.dataSource = self;
         _parallaxCollectionView.delegate = self;
         [_parallaxCollectionView registerClass:[MJCollectionViewCell class]
-            forCellWithReuseIdentifier:@"MJCell"];
+                    forCellWithReuseIdentifier:@"MJCell"];
         
         _parallaxCollectionView.decelerationRate = UIScrollViewDecelerationRateFast;
         [_parallaxCollectionView setContentOffset:CGPointMake(0, IMAGE_HEIGHT - (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2)];
@@ -42,8 +45,8 @@ NSInteger BOUNDS_HEIGHT;
 
 - (void)viewDidLoad
 {
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(blurViewTapped)];
-    [self.view addGestureRecognizer:tap];
+    //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(blurViewTapped)];
+    //    [self.view addGestureRecognizer:tap];
     BOUNDS_WIDTH = self.view.bounds.size.width;
     BOUNDS_HEIGHT = self.view.bounds.size.height;
     [super viewDidLoad];
@@ -89,8 +92,8 @@ NSInteger BOUNDS_HEIGHT;
     //get image name and assign
     NSString* imageName = [self.images objectAtIndex:indexPath.row - 1];
     
-        cell.image = [UIImage imageNamed:imageName];
-
+    cell.image = [UIImage imageNamed:imageName];
+    
     return cell;
 }
 
@@ -100,7 +103,7 @@ NSInteger BOUNDS_HEIGHT;
 
 //- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
 //    for(MJCollectionViewCell *view in self.parallaxCollectionView.visibleCells) {
-//        
+//
 //    }
 //}
 
@@ -114,10 +117,54 @@ NSInteger BOUNDS_HEIGHT;
 //}
 //- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
 //    for(MJCollectionViewCell *view in self.parallaxCollectionView.visibleCells) {
-// 
+//
 ////        view.textTransparency = 0;
 //    }
 //}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    MJCollectionViewCell *cell = (MJCollectionViewCell*)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+    
+    UIImage *topCellImage = [self captureTransitionTopView];
+    //    UIImage *bottomCellImage = [self captureCellView:bottomCell];
+    UIImage *bottomCellImage = [self captureTransitionBottomView];
+    
+    CGRect topRect = CGRectMake(0, 0, BOUNDS_WIDTH, (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2);
+    CGRect bottomRect = CGRectMake(0, (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2 + IMAGE_HEIGHT, BOUNDS_WIDTH, (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2);
+    
+    UIImageView *referenceImageViewTop= [[UIImageView alloc] initWithImage:topCellImage];
+    UIImageView *referenceImageViewBottom= [[UIImageView alloc] initWithImage:bottomCellImage];
+    [referenceImageViewTop setFrame:topRect];
+    [referenceImageViewBottom setFrame:bottomRect];
+
+    
+    
+    //    if (collectionView.contentOffset.y - cell.frame.origin.y + (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2 == 0) {
+    PageViewController *pageVC = [[PageViewController alloc] initWithNibName:nil bundle:nil withPresentation:YES];
+    pageVC.image = cell.image;
+    
+    transitioningDelegate = [[ZoomInOutTransitioningDelegate alloc] initWithReferenceImageScrollView:cell.MJImageView imageViewTop:referenceImageViewTop imageViewBottom:referenceImageViewBottom];
+//    [pageVC setTransitioningDelegate:transitioningDelegate];
+//    [self presentViewController:pageVC animated:YES completion:NULL];
+    self.navigationController.delegate = self;
+    [self.navigationController pushViewController:pageVC animated:YES];
+    
+    //    }
+    
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                  animationControllerForOperation:(UINavigationControllerOperation)operation
+                                               fromViewController:(UIViewController *)fromVC
+                                                 toViewController:(UIViewController *)toVC {
+    ZoomInOutAnimatedTransitioning *transition = [[ZoomInOutAnimatedTransitioning alloc] init];
+    [transition setTransitionType:StretchInOut];
+    if ([fromVC isKindOfClass:[self class]])
+        [transition setIsPresentation:YES];
+    else
+        [transition setIsPresentation:NO];
+    return transition;
+}
+
 
 #pragma mark - UICollectionViewFlowLayoutDelegate
 
@@ -133,6 +180,35 @@ NSInteger BOUNDS_HEIGHT;
     [_parallaxCollectionView insertItemsAtIndexPaths:@[indexPath]];
 }
 
+#pragma mark - Helper methods
+
+- (UIImage *)captureTransitionTopView {
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        if ([[UIScreen mainScreen] scale] == 2.0) {
+            UIGraphicsBeginImageContextWithOptions(CGSizeMake(BOUNDS_WIDTH, (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2), YES, 2.0);
+        } else {
+            UIGraphicsBeginImageContext(CGSizeMake(BOUNDS_WIDTH, (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2));
+        }
+    } else {
+        UIGraphicsBeginImageContext(CGSizeMake(BOUNDS_WIDTH, (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2));
+    }
+    [self.view drawViewHierarchyInRect:CGRectMake(0, 0, BOUNDS_WIDTH, BOUNDS_HEIGHT) afterScreenUpdates:YES];
+    return UIGraphicsGetImageFromCurrentImageContext();
+}
+
+- (UIImage *)captureTransitionBottomView {
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        if ([[UIScreen mainScreen] scale] == 2.0) {
+            UIGraphicsBeginImageContextWithOptions(CGSizeMake(BOUNDS_WIDTH, (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2), YES, 2.0);
+        } else {
+            UIGraphicsBeginImageContext(CGSizeMake(BOUNDS_WIDTH, (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2));
+        }
+    } else {
+        UIGraphicsBeginImageContext(CGSizeMake(BOUNDS_WIDTH, (BOUNDS_HEIGHT - IMAGE_HEIGHT)/2));
+    }
+    [self.view drawViewHierarchyInRect:CGRectMake(0, -(BOUNDS_HEIGHT - IMAGE_HEIGHT)/2 - IMAGE_HEIGHT, BOUNDS_WIDTH, BOUNDS_HEIGHT) afterScreenUpdates:YES];
+    return UIGraphicsGetImageFromCurrentImageContext();
+}
 
 
 @end

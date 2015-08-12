@@ -11,7 +11,6 @@
 
 @interface MJCollectionViewCell() {
 }
-@property (nonatomic, strong, readwrite) UIImageView *MJImageView;
 
 @property (nonatomic, strong, readwrite) UIView *overlapView;
 
@@ -65,7 +64,8 @@ NSInteger IMAGE_HEIGHT = 260;
 
 - (void)setImage:(UIImage *)image
 {
-    self.MJImageView.image = image;
+    _image = image;
+    self.MJImageView.image = _image;
 }
 
 - (void)setImageOffset:(CGPoint)imageOffset

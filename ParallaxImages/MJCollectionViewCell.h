@@ -19,6 +19,7 @@ extern NSInteger IMAGE_HEIGHT;
  */
 @property (nonatomic, strong, readwrite) UIImage *image;
 @property (nonatomic, assign, readwrite) CGPoint imageOffset;
+@property (nonatomic, strong, readwrite) UIImageView *MJImageView;
 
 
 @end

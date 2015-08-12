@@ -11,6 +11,6 @@
 extern NSInteger BOUNDS_WIDTH;
 extern NSInteger BOUNDS_HEIGHT;
 
-@interface MJRootViewController : UIViewController
+@interface MJRootViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate>
 
 @end
